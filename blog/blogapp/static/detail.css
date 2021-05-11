@@ -1,0 +1,37 @@
+.container > h1{
+    color: rgba(68, 68, 68, 0);
+}
+
+form > button {
+    width: 23%;
+}
+
+form {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
+
+.comment_cont{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.comment_cont > li {
+    list-style: none;
+    padding: 5px;
+    color: #252525d1;
+    background: rgba(240, 248, 255, 0.685);
+    margin: 3px;
+    display: flex;
+    justify-content: space-between;
+}
+.comment_cont > li > a{
+    font-size: 14px;
+    color: #ff000075;
+}

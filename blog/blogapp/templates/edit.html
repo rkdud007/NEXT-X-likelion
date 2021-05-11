@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static "edit.css" %}"> 
+{% endblock css %}
+
+
+{% block container %}
+<h1 class='nothome'>T O D O</h1>
+<div class="sub-container">
+    <form action='' method="POST">
+        {% csrf_token %}
+        <div class="form-cont">
+            <label for="title">제목</label>
+            <input class="form-control" type="text" id="title" name="title" value="{{post.title}}">
+        </div>
+        <div class="form-cont">
+            <label for="content">세부사항</label>
+            <textarea class="form-control" name="content" id="content" cols="30" rows="10" >{{post.content}}</textarea>
+        </div>
+        <div class="form-cont">
+            <label for="due_date">마감기한</label>
+            <input class="form-control" type="date" id="due_date" name="due_date" value="{{post.due_date|date:"Y-m-d"}}">
+        </div>
+        <button class="btn btn-outline-secondary" type="submit">수정하기</button>
+    </form>
+</div>  
+{% endblock container %}

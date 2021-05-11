@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static "home.css" %}">
+{% endblock css %}
+    
+
+{% block container %}
+<h1>T O D O</h1>
+        <ul class="sub-container">
+            {% for post in posts %}
+            <li>
+                <a href="{% url 'detail' post.pk %}">{{post.title}}</a>
+                <div>{{post.due_date}}</div>
+            </li>
+            {% endfor %}
+        </ul>
+        <button class="btn btn-outline-secondary"><a href="{% url 'new' %}">글쓰러 가기</a></button>
+{% endblock container %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block css %} {% load static %}
+<link rel="stylesheet" href="{% static "new.css" %}">
+{% endblock css %}
+
+
+{% block container %}
+<h1 class='nothome'>T O D O</h1>
+<div class="sub-container">
+    <form action='' method="POST">
+        {% csrf_token %}
+        <div class="form-cont">
+            <label for="title">할일</label>
+            <input class="form-control" type="text" id="title" name="title" placeholder="할일을 입력해주세요">
+        </div>
+        <div class="form-cont">
+            <label for="content">세부사항</label>
+            <textarea class="form-control" name="content" id="content" cols="30" rows="10" placeholder="세부사항을 입력해 주세요"></textarea>
+        </div>
+        <div class="form-cont">
+            <label for="due_date">마감기한</label>
+            <input class="form-control" type="date" id="due_date" name="due_date">
+        </div>
+        <button class="btn btn-outline-secondary" type="submit">작성하기</button>
+    </form>
+</div>
+{% endblock container %}
+    
